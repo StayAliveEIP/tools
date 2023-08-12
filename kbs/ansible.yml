@@ -52,10 +52,10 @@
       become: yes
 
     - name: Add Kubernetes signing key
-        become: yes
-        ansible.builtin.apt_key:
-          url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-          state: present
+      become: yes
+      ansible.builtin.apt_key:
+        url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+        state: present
 
     - name: Add Kubernetes repository
       become: yes
@@ -77,3 +77,7 @@
     - name: Hold Kubernetes components at their current version
       become: yes
       command: apt-mark hold kubelet kubeadm kubectl
+
+
+
+
